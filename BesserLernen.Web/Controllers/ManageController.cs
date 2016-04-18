@@ -41,6 +41,8 @@ namespace BesserLernen.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Index(ManageMessageId? message = null)
         {
+            return RedirectToAction("Index", "Survey");
+            /*
             ViewData["StatusMessage"] =
                 message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
                 : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
@@ -60,6 +62,7 @@ namespace BesserLernen.Web.Controllers
                 BrowserRemembered = await _signInManager.IsTwoFactorClientRememberedAsync(user)
             };
             return View(model);
+            */
         }
 
         //

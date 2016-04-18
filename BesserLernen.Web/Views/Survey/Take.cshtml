@@ -1,0 +1,29 @@
+@model IEnumerable<BesserLernen.Web.ViewModels.SurveyQuestionViewModel>
+
+@{
+    ViewData["Title"] = "Umfrage";
+}
+
+<h2>Umfrage</h2>
+
+<form asp-action="Submit" class="form-horizontal" role="form">
+    <div asp-validation-summary="ValidationSummary.All" class="text-danger"></div>
+
+    <h3>Hast du diese Fragen schon einmal im Bewerbungsgespr&auml;ch geh&ouml;rt?</h3>
+
+    <table class="table">
+        @Html.EditorForModel()
+    </table>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Abschicken" class="btn btn-default"/>
+        </div>
+    </div>
+</form>
+
+@section Scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

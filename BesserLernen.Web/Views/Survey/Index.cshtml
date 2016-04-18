@@ -1,0 +1,30 @@
+@model IEnumerable<SurveyAnswer>
+
+@{
+    ViewData["Title"] = "Umfrageergebnisse";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Benutzerseite</h4>
+    <hr/>
+    <p>Du hast auf die Fragen folgenderma&szlig;en geantwortet:</p>
+    <table class="table">
+        @foreach (var answer in Model.OrderBy(a => a.Question.SortPosition))
+        {
+            <tr>
+                <td>@answer.Question.Title</td>
+                <td>@(answer.AnsweredYes ? "Ja" : "Nein")</td>
+            </tr>
+
+        }
+    </table>
+
+    <p >
+        Insgesamt @Model.Count(a => a.AnsweredYes) Fragen sind mit "Ja" beantwortet.
+    </p>
+</div>
+<p>
+    <a asp-action="Retake">Nochmal!</a> 
+</p>
