@@ -2,4 +2,4 @@
 /.vs
 /3rdParty
 /artifacts
-/BesserLernen.Web/node_modules
+;/BesserLernen.Web/node_modules
