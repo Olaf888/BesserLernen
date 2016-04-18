@@ -3,8 +3,8 @@
 <tr>
     <td>@Model.Title</td>
     <td>
-        @Html.HiddenFor(p => p.QuestionId)
-        <for></for>
+        <input asp-for="QuestionId" type="hidden"/>
+
         <label>
             <input asp-for="AnsweredYes" type="radio" value="true"/>
             Ja
